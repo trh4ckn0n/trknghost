@@ -75,7 +75,7 @@ chmod +x dropper.sh
 
 Dans un terminal, rendre le script exécutable puis le lancer :
 
-```php
+```bash
 chmod +x dropper.php
 php dropper.php
 ```
