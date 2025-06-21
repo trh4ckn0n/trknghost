@@ -1,0 +1,526 @@
+/* == Reset de base == */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* == Variables de couleurs néon == */
+:root {
+  --bg-color: #0b0c10;
+  --text-color: #f0f0f0;
+  --accent1: #00ffea;
+  --accent2: #ff00c8;
+  --accent3: #fffc00;
+  --shadow-neon: rgba(0, 255, 234, 0.6);
+  --shadow-red: rgba(255, 0, 200, 0.6);
+  --shadow-yellow: rgba(255, 252, 0, 0.6);
+  --glitch-red: #ff0048;
+  --glitch-cyan: #00ffe7;
+  --font-main: 'Orbitron', 'Courier New', Courier, monospace;
+  --font-accent: 'Audiowide', cursive;
+}
+
+/* == Polices et mise en page == */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  padding: 2rem 4rem;
+  max-width: 960px;
+  margin: auto;
+  user-select: none;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* == Titres avec effet néon + glitch == */
+h1, h2, h3, h4 {
+  font-family: var(--font-accent);
+  color: var(--accent1);
+  position: relative;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  letter-spacing: 0.12em;
+  filter: drop-shadow(0 0 5px var(--accent1));
+  animation: flicker 3s infinite alternate;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  animation: glitch 2s infinite;
+}
+
+h2 {
+  font-size: 2.5rem;
+  animation-delay: 0.3s;
+}
+
+h3 {
+  font-size: 2rem;
+  animation-delay: 0.6s;
+}
+
+h4 {
+  font-size: 1.6rem;
+  animation-delay: 0.9s;
+}
+
+/* == Animations == */
+@keyframes flicker {
+  0%, 100% {opacity: 1;}
+  50% {opacity: 0.7;}
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow:
+      2px 0 var(--glitch-red),
+      -2px 0 var(--glitch-cyan);
+  }
+  20% {
+    text-shadow:
+      -2px 0 var(--glitch-red),
+      2px 0 var(--glitch-cyan);
+  }
+  40% {
+    text-shadow:
+      2px 0 var(--glitch-red),
+      2px 2px var(--glitch-cyan);
+  }
+  60% {
+    text-shadow:
+      -2px 0 var(--glitch-red),
+      -2px -2px var(--glitch-cyan);
+  }
+  80% {
+    text-shadow:
+      2px 2px var(--glitch-red),
+      -2px -2px var(--glitch-cyan);
+  }
+  100% {
+    text-shadow:
+      2px 0 var(--glitch-red),
+      -2px 0 var(--glitch-cyan);
+  }
+}
+
+/* == Paragraphes == */
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  letter-spacing: 0.04em;
+  text-shadow:
+    0 0 4px #00fff7,
+    0 0 8px #00d1b2;
+  transition: color 0.3s ease;
+}
+
+p:hover {
+  color: var(--accent3);
+  text-shadow:
+    0 0 10px var(--accent3),
+    0 0 20px var(--accent3);
+  cursor: default;
+}
+
+/* == Liens == */
+a {
+  color: var(--accent2);
+  text-decoration: none;
+  font-weight: 700;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  width: 100%;
+  background-color: var(--accent2);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: right;
+}
+
+a:hover {
+  color: var(--accent1);
+}
+
+a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* == Code inline & blocs == */
+code, pre {
+  font-family: 'Source Code Pro', monospace;
+  background: linear-gradient(135deg, #222, #111);
+  color: var(--accent1);
+  border-radius: 6px;
+  padding: 0.15em 0.3em;
+  box-shadow:
+    0 0 10px var(--accent1);
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 2rem;
+  background: radial-gradient(circle at top left, #0ff, #005050);
+  border: 1px solid var(--accent1);
+  text-shadow: none;
+}
+
+/* == Blockquote == */
+blockquote {
+  border-left: 5px solid var(--accent3);
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  font-style: italic;
+  color: #fff64f;
+  text-shadow: 0 0 8px #fff64f;
+  background-color: rgba(255, 252, 0, 0.1);
+  filter: drop-shadow(0 0 4px var(--accent3));
+}
+
+/* == Listes == */
+ul, ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.02em;
+}
+
+/* == Tables == */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 12px var(--accent1);
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  border: 1px solid var(--accent1);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  color: var(--text-color);
+}
+
+th {
+  background: linear-gradient(90deg, var(--accent2), var(--accent1));
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  box-shadow: 0 0 8px var(--accent2);
+}
+
+tr:nth-child(even) {
+  background-color: #121212;
+}
+
+tr:hover {
+  background-color: var(--accent3);
+  color: #000;
+  transition: background-color 0.3s ease;
+}
+
+/* == Formulaire == */
+input, select, textarea, button {
+  background-color: #222;
+  border: 1px solid var(--accent1);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  padding: 0.6rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent3);
+  box-shadow: 0 0 10px var(--accent3);
+}
+
+button {
+  cursor: pointer;
+  background: linear-gradient(90deg, var(--accent2), var(--accent1));
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 0 8px var(--accent1);
+}
+
+button:hover {
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  box-shadow: 0 0 15px var(--accent2);
+}
+
+/* == Images == */
+img {
+  max-width: 100%;
+  border: 3px solid var(--accent1);
+  border-radius: 12px;
+  box-shadow:
+    0 0 20px var(--accent1),
+    0 0 30px var(--accent2);
+  margin: 2rem 0;
+  transition: transform 0.5s ease;
+}
+
+img:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow:
+    0 0 35px var(--accent3),
+    0 0 45px var(--accent2);
+}
+
+/* == Animations supplémentaires == */
+@keyframes pulseNeon {
+  0%, 100% {
+    text-shadow:
+      0 0 8px var(--accent1),
+      0 0 20px var(--accent2),
+      0 0 30px var(--accent3);
+  }
+  50% {
+    text-shadow:
+      0 0 15px var(--accent3),
+      0 0 35px var(--accent2),
+      0 0 40px var(--accent1);
+  }
+}
+
+.pulse-neon {
+  animation: pulseNeon 3s infinite alternate;
+}
+
+/* == Effet glitch sur le texte classique == */
+.glitch {
+  position: relative;
+  color: var(--accent1);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+}
+
+.glitch::before {
+  animation: glitchTop 2s infinite linear alternate-reverse;
+  color: var(--glitch-red);
+  z-index: -1;
+  top: -2px;
+  text-shadow: -2px 0 var(--glitch-red);
+}
+
+.glitch::after {
+  animation: glitchBot 3s infinite linear alternate;
+  color: var(--glitch-cyan);
+  z-index: -2;
+  top: 2px;
+  text-shadow: 2px 0 var(--glitch-cyan);
+}
+
+@keyframes glitchTop {
+  0%, 100% { clip-path: polygon(0 0%, 100% 0%, 100% 10%, 0 10%); transform: translate(0, 0); }
+  50% { clip-path: polygon(0 5%, 100% 5%, 100% 15%, 0 15%); transform: translate(-2px, -2px); }
+}
+
+@keyframes glitchBot {
+  0%, 100% { 
+    clip-path: polygon(0 85%, 100% 85%, 100% 100%, 0 100%);
+    transform: translate(0, 0);
+  }
+  50% { 
+    clip-path: polygon(0 80%, 100% 80%, 100% 90%, 0 90%);
+    transform: translate(2px, 2px);
+  }
+}
+
+/* == Conteneur principal == */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #050608, #0b0c10);
+  border-radius: 20px;
+  box-shadow:
+    0 0 30px var(--accent1),
+    inset 0 0 50px var(--accent2);
+}
+
+/* == Navigation == */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+nav a {
+  font-family: var(--font-accent);
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: var(--accent2);
+  position: relative;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  text-shadow:
+    0 0 6px var(--accent2),
+    0 0 12px var(--accent3);
+}
+
+nav a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: var(--accent1);
+  transition: width 0.3s ease, left 0.3s ease;
+  border-radius: 2px;
+  transform: translateX(-50%);
+}
+
+nav a:hover {
+  color: var(--accent1);
+}
+
+nav a:hover::before {
+  width: 80%;
+  left: 50%;
+}
+
+/* == Boutons secondaires == */
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--accent3);
+  color: var(--accent3);
+  padding: 0.5rem 1.25rem;
+  font-weight: 700;
+  font-family: var(--font-main);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow:
+    0 0 8px var(--accent3);
+}
+
+.btn-secondary:hover {
+  background: var(--accent3);
+  color: #0b0c10;
+  box-shadow:
+    0 0 20px var(--accent3),
+    0 0 40px var(--accent2);
+}
+
+/* == Sections avec fond semi-transparent et bordures lumineuses == */
+section {
+  background: rgba(11, 12, 16, 0.7);
+  border: 2px solid var(--accent2);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  box-shadow:
+    0 0 20px var(--accent2),
+    inset 0 0 15px var(--accent1);
+  backdrop-filter: blur(8px);
+}
+
+/* == Formulaire avec style plus poussé == */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 700;
+  color: var(--accent1);
+  text-shadow: 0 0 5px var(--accent1);
+  font-family: var(--font-accent);
+  letter-spacing: 0.1em;
+}
+
+/* == Inputs avec placeholder néon == */
+input::placeholder,
+textarea::placeholder {
+  color: var(--accent3);
+  opacity: 0.7;
+  font-style: italic;
+  text-shadow: 0 0 6px var(--accent3);
+}
+
+/* == Footer == */
+footer {
+  text-align: center;
+  color: var(--accent3);
+  font-family: var(--font-accent);
+  font-size: 0.9rem;
+  margin-top: 4rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--accent3);
+  text-shadow: 0 0 10px var(--accent3);
+}
+
+/* == Scrollbar personnalisée == */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--accent1), var(--accent2));
+  border-radius: 10px;
+  box-shadow:
+    0 0 10px var(--accent1);
+}
+
+/* == Media Queries pour responsive minimal == */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem 1.5rem;
+    max-width: 100%;
+  }
+  
+  nav {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+}
