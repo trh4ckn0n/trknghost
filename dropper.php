@@ -99,12 +99,12 @@ function run_executable($folder) {
     $system = PHP_OS_FAMILY;
     chdir($folder);
     if ($system === "Windows") {
-        $exe_path = $folder . DIRECTORY_SEPARATOR . "trknghost.exe";
+        $exe_path = $folder . DIRECTORY_SEPARATOR . "trknghost";
         if (file_exists($exe_path)) {
-            echo "[*] Lancement de trknghost.exe\n";
+            echo "[*] Lancement de trknghost\n";
             pclose(popen("start /B " . escapeshellarg($exe_path), "r"));
         } else {
-            echo "[!] trknghost.exe non trouvé.\n";
+            echo "[!] trknghost non trouvé.\n";
             exit(1);
         }
     } else {
