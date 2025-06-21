@@ -9,7 +9,8 @@ Ce projet fournit plusieurs scripts "dropper" permettant de télécharger automa
 - `dropper.py` : Script Python cross-platform  
 - `dropper.bat` : Script Batch Windows  
 - `dropper.ps1` : Script PowerShell Windows  
-- `dropper.sh` : Script Shell Linux/macOS  
+- `dropper.sh` : Script Shell Linux/macOS
+- `dropper.php` : Script Php
 
 ---
 
@@ -21,7 +22,7 @@ Ce projet fournit plusieurs scripts "dropper" permettant de télécharger automa
 2. Extraction automatique dans un dossier temporaire
 
 3. Exécution de l’outil :  
-   - Windows : exécute `trknghost.exe`  
+   - Windows : exécute `trknghost`  
    - Linux/macOS : exécute `trknghost.py` avec Python
 
 4. Nettoyage automatique des fichiers temporaires
@@ -32,7 +33,8 @@ Ce projet fournit plusieurs scripts "dropper" permettant de télécharger automa
 
 - Pour `dropper.py` : Python 3.x installé  
 - Pour `dropper.bat` et `dropper.ps1` : Windows  
-- Pour `dropper.sh` : Linux/macOS avec bash  
+- Pour `dropper.sh` : Linux/macOS avec bash
+- Pour `dropper.php` : Php 
 
 ---
 
@@ -67,6 +69,15 @@ Dans un terminal, rendre le script exécutable puis le lancer :
 ```bash
 chmod +x dropper.sh
 ./dropper.sh
+```
+
+### Php
+
+Dans un terminal, rendre le script exécutable puis le lancer :
+
+```php
+chmod +x dropper.php
+php dropper.php
 ```
 
 ---
