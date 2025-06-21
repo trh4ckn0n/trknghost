@@ -1,0 +1,78 @@
+
+    <!DOCTYPE html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>README.md</title><style>
+    body { background-color: #121212; color: #e0e0e0; font-family: Arial, sans-serif; max-width: 900px; margin: auto; padding: 2rem;}
+    h1, h2, h3 { color: #00ff99; border-bottom: 1px solid #00ff99; }
+    a { color: #66ccff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    code, pre { background-color: #272727; border-radius: 5px; padding: 0.2rem 0.4rem;}
+    blockquote { border-left: 4px solid #00ff99; padding-left: 1rem; font-style: italic; color: #9acd32;}
+    </style></head><body><h1 id="trknghost-dropper">Trknghost Dropper</h1>
+<p>Ce projet fournit plusieurs scripts "dropper" permettant de télécharger automatiquement l'archive <code>trknghost.zip</code> depuis le dépôt GitHub officiel, de la décompresser puis d'exécuter le programme adapté à la plateforme (Windows/Linux/macOS).</p>
+<hr />
+<h2 id="contenu">Contenu</h2>
+<ul>
+<li><code>dropper.py</code> : Script Python cross-platform  </li>
+<li><code>dropper.bat</code> : Script Batch Windows  </li>
+<li><code>dropper.ps1</code> : Script PowerShell Windows  </li>
+<li><code>dropper.sh</code> : Script Shell Linux/macOS  </li>
+</ul>
+<hr />
+<h2 id="fonctionnement">Fonctionnement</h2>
+<ol>
+<li>
+<p>Téléchargement de l’archive <code>trknghost.zip</code> depuis :<br />
+<code>https://github.com/trh4ckn0n/trknghost/releases/download/dl/trknghost.zip</code></p>
+</li>
+<li>
+<p>Extraction automatique dans un dossier temporaire</p>
+</li>
+<li>
+<p>Exécution de l’outil :  </p>
+</li>
+<li>Windows : exécute <code>trknghost.exe</code>  </li>
+<li>
+<p>Linux/macOS : exécute <code>trknghost.py</code> avec Python</p>
+</li>
+<li>
+<p>Nettoyage automatique des fichiers temporaires</p>
+</li>
+</ol>
+<hr />
+<h2 id="prerequis">Prérequis</h2>
+<ul>
+<li>Pour <code>dropper.py</code> : Python 3.x installé  </li>
+<li>Pour <code>dropper.bat</code> et <code>dropper.ps1</code> : Windows  </li>
+<li>Pour <code>dropper.sh</code> : Linux/macOS avec bash  </li>
+</ul>
+<hr />
+<h2 id="usage">Usage</h2>
+<h3 id="python">Python</h3>
+<pre><code class="language-bash">python3 dropper.py
+</code></pre>
+<h3 id="batch-windows">Batch (Windows)</h3>
+<p>Double-cliquer sur <code>dropper.bat</code> ou lancer depuis l'invite de commandes (CMD) :</p>
+<pre><code class="language-cmd">dropper.bat
+</code></pre>
+<h3 id="powershell-windows">PowerShell (Windows)</h3>
+<p>Lancer dans une console PowerShell (exécuter avec les droits d’exécution nécessaires) :</p>
+<pre><code class="language-powershell">.\dropper.ps1
+</code></pre>
+<h3 id="shell-linuxmacos">Shell (Linux/macOS)</h3>
+<p>Dans un terminal, rendre le script exécutable puis le lancer :</p>
+<pre><code class="language-bash">chmod +x dropper.sh
+./dropper.sh
+</code></pre>
+<hr />
+<h2 id="notes-de-securite">Notes de sécurité</h2>
+<ul>
+<li>Ce dropper télécharge et exécute un code externe, ce qui peut présenter des risques.  </li>
+<li>N'exécutez ces scripts que sur des machines contrôlées et à des fins légales et éthiques.  </li>
+<li>Vérifiez toujours la source des fichiers téléchargés avant exécution.</li>
+</ul>
+<hr />
+<h2 id="auteur">Auteur</h2>
+<p><code>trhacknon</code> - Projet GitHub : <a href="https://github.com/trh4ckn0n/trknghost">https://github.com/trh4ckn0n/trknghost</a></p>
+<hr />
+<h2 id="licence">Licence</h2>
+<p>Licence MIT - Voir fichier LICENSE</p></body></html>
